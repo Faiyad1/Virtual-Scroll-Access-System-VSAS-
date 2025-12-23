@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #E0FDFF;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="1200.0">
+               <children>
+                  <TextField fx:id="byTextField" prefHeight="50.0" prefWidth="200.0" promptText="             Author ID">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="scrollIdTextField" prefHeight="50.0" prefWidth="220.0" promptText="                Scroll ID">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="titleTextField" prefHeight="50.0" prefWidth="410.0" promptText="                                          Title">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <TextField fx:id="uploadDateTextField" prefHeight="50.0" prefWidth="180.0" promptText="         Upload Date">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <Button mnemonicParsing="false" onAction="#searchScrolls" prefHeight="50.0" prefWidth="50.0" text="🔍">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font></Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="55.0" />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="homeScrollTableView" prefHeight="562.0" prefWidth="1060.0" style="-fx-border-color: black; -fx-border-width: .4;">
+              <columns>
+                <TableColumn fx:id="byTableColumn" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: .2; -fx-font-size: 16; -fx-alignment: center;" text="Author ID" />
+                <TableColumn fx:id="scrollID" minWidth="0.0" prefWidth="220.0" style="-fx-border-color: black; -fx-border-width: .2; -fx-font-size: 16;" text="Scroll ID" />
+                  <TableColumn fx:id="scrollTitle" prefWidth="412.0" style="-fx-border-color: black; -fx-border-width: .2; -fx-font-size: 16;" text="Title" />
+                  <TableColumn fx:id="uploadDate" minWidth="0.0" prefWidth="125.0" style="-fx-border-color: black; -fx-border-width: .2; -fx-font-size: 16; -fx-alignment: center;" text="Upload Date" />
+                  <TableColumn fx:id="downloadsCount" minWidth="0.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: .2; -fx-font-size: 16; -fx-alignment: center; -fx-wrap-text: true;" text="Downloads" />
+              </columns>
+               <VBox.margin>
+                  <Insets top="55.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox alignment="TOP_CENTER" prefHeight="70.0" prefWidth="1200.0">
+               <children>
+                  <Label fx:id="scrollError" alignment="CENTER" prefHeight="35.0" prefWidth="757.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="8.0" prefWidth="1200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#switchToScrollPreview" prefHeight="54.0" prefWidth="290.0" style="-fx-background-color: #160052; -fx-background-radius: 14; -fx-padding: 6;" text="Preview" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="downloadButton" mnemonicParsing="false" onAction="#downloadScroll" prefHeight="51.0" prefWidth="290.0" style="-fx-background-color: #160052; -fx-background-radius: 14; -fx-padding: 8;" text="Download" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="55.0" />
+               </VBox.margin>
+            </HBox>
+         </children></VBox>
+   </center>
+   <top>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="1230.0" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <ImageView fx:id="homeProfilePic" fitHeight="59.0" fitWidth="65.0" pickOnBounds="true">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </ImageView>
+            <Label fx:id="homeName" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="318.0" text="Hello" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="homeType" alignment="CENTER" prefHeight="100.0" prefWidth="94.0" text="Member">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="myScrollButton" mnemonicParsing="false" onAction="#switchToMyScroll" prefHeight="51.0" prefWidth="140.0" style="-fx-background-color: white;" text="My Scrolls">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="updateDetailsButton" mnemonicParsing="false" onAction="#switchToUserDetails" prefHeight="51.0" prefWidth="189.0" style="-fx-background-color: white;" text="Update Details">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="adminPrivilegesButton" mnemonicParsing="false" onAction="#switchToAdminPrivileges" prefHeight="51.0" prefWidth="212.0" style="-fx-background-color: white;" text="Admin Privileges">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#logout" prefHeight="51.0" prefWidth="109.0" style="-fx-background-color: white;" text="Logout">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
