@@ -47,7 +47,6 @@ CI/CD tools used: GitHub, Gradle, JUnit, Jenkins, Docker
 - [Logs](#logs)
 - [Database Design](#database-design)
 - [Project Structure](#project-structure)
-- [Sample Assets](#sample-assets)
 
 ## Features
 
@@ -183,8 +182,3 @@ app/
 │           └── EncryptorTest.java
 └── build.gradle
 ```
-
-## Sample Assets
-
-- Sample scrolls: `app/src/main/resources/SampleScrolls`
-- Sample profile pictures: `app/src/main/resources/SamplePics`
